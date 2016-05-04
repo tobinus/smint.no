@@ -170,7 +170,7 @@ gulp.task('default', ['clean'], function () {
   gulp.start('build');
 });
 
-
-gulp.task('deploy', ['build'], function() {
-    run("rsync -az -e 'ssh' dist esso@svorstol.com:/home/esso").exec();
-});
+// @TODO Set up with remote server
+// gulp.task('deploy', ['build'], function() {
+//     run("rsync -az -e 'ssh' dist ").exec();
+// });
