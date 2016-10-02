@@ -143,5 +143,5 @@ gulp.task('default', ['clean'], function () {
 });
 
 gulp.task('deploy', ['build'], function() {
-   run("rsync -az -e dist scgw1.studentmediene.no:/home/sm/www.smint.no/html").exec();
+   run("scp -r dist/ lamp.studentmediene.local:/home/sm/www.smint.no").exec();
 });
