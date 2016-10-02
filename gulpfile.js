@@ -11,17 +11,6 @@ var source = require('vinyl-source-stream');
 var run = require('gulp-run');
 
 
-
-gulp.task('eslint', function() {
-    return gulp.src('app/scripts/**/*.js')
-        .pipe($.eslint())
-        .pipe(reload({stream: true, once: true}))
-        /* Outputs hinting to console */
-        .pipe($.eslint.format())
-				//.pipe($.if(!browserSync.active, $.eslint.failOnError()))
-});
-
-
 gulp.task('less', function () {
   return gulp.src('app/styles/*.less')
 		.pipe($.sourcemaps.init())
@@ -35,24 +24,11 @@ gulp.task('less', function () {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('es6', ['eslint'], function () {
-	browserify({
-		entries:'./app/scripts/main.js',
-		debug:true
-	})
-	.transform(babelify)
-	.bundle()
-	.pipe(source('app.js'))
-	.pipe(gulp.dest('./.tmp'));
-});
-
-
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: ['.tmp']});
 
   return gulp.src('app/*.html')
     .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
@@ -103,9 +79,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('preflight',['eslint']);
-
-gulp.task('produce',['preflight','wiredep','es6','less','images','fonts']);
+gulp.task('produce',['wiredep','less','images','fonts']);
 
 gulp.task('package',['produce','html','extras']);
 
@@ -124,7 +98,6 @@ gulp.task('serve', ['produce'], function () {
   // watch for changes
   gulp.watch([
     'app/*.html',
-    'app/scripts/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
@@ -132,7 +105,6 @@ gulp.task('serve', ['produce'], function () {
   gulp.watch('app/styles/**/*.less', ['less']);
   gulp.watch('app/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
-  gulp.watch('app/scripts/**/*.js', ['es6']);
 });
 
 gulp.task('serve:dist',['package'], function () {
@@ -170,7 +142,6 @@ gulp.task('default', ['clean'], function () {
   gulp.start('build');
 });
 
-// @TODO Set up with remote server
-// gulp.task('deploy', ['build'], function() {
-//     run("rsync -az -e 'ssh' dist ").exec();
-// });
+gulp.task('deploy', ['build'], function() {
+   run("rsync -az -e dist scgw1.studentmediene.no:/home/sm/www.smint.no/html").exec();
+});
