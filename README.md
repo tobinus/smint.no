@@ -5,4 +5,4 @@ Gives an overview of the services used internally at the Student Media in Trondh
 1. `npm install -g gulp bower`
 2. `npm install && bower install`
 
-`gulp` to build, and `gulp serve` for local environment. Run `gulp deploy` to make Gulp build and deploy.
+`npm run build` to build, and `npm start` for local environment. Run `npm run deploy` to make Gulp build and deploy.
