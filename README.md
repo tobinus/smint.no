@@ -2,9 +2,9 @@
 Gives an overview of the services used internally at the Student Media in Trondheim (Studentmediene i Trondheim).
 
 ## Installation
-This is just a static web page. The contents of the `app/` folder is the web root for `www.smint.no`.
+This is just a static web page. The contents of the `webroot/` folder is the web root for `www.smint.no`.
 
-To preview locally, with Python3 installed, while inside the `app/` folder:
+To preview locally, with Python3 installed, while inside the `webroot/` folder:
 
 ```sh
 python3 -m http.server
