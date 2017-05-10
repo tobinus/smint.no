@@ -4,16 +4,16 @@ Gives an overview of the services used internally at the Student Media in Trondh
 ## Installation
 This is just a static web page. The contents of the `webroot/` folder is the web root for `www.smint.no`.
 
-To preview locally, with Python3 installed, while inside the `webroot/` folder:
+To preview locally, just open the `index.html` file in your browser (hit `CTRL` + `O`).
+Or, if you'd like to make it available for other devices on the same network, run the following with Python3 installed,
+while inside the `webroot/` folder:
 
 ```sh
 python3 -m http.server
 ```
 
-Anyone on the same network as you may also access the preview, enabling you to test it on your mobile phone.
-
 When you deploy the application, make sure you enable caching of the resources (with revalidation), as well as GZIP
-compression of the CSS and HTML files, to reduce load times and network usage, making up for the fact that the CSS and
+compression of the CSS and HTML files. This way, you reduce load times and network usage, making up for the fact that the CSS and
 HTML are not minified and packed together.
 
 ## Dependencies
