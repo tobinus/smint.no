@@ -25,3 +25,13 @@ a {
 .inverted {
     filter: invert(100%);
 }
+
+/* Make it so columns inside the nine columns div have width relative to it */
+#main-links {
+    position: relative;
+}
+
+/* Put the headings a bit to the left of the links */
+#main-links h4 {
+    margin-left: -2%;
+}
