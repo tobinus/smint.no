@@ -35,3 +35,15 @@ a {
 #main-links h4 {
     margin-left: -2%;
 }
+
+/* Make sure overflow doesn't obfuscate other text */
+#main-links h5, #main-links p {
+    overflow: hidden;
+}
+
+/* Override Skeleton's default of setting page width to 80%, wasting precious screen space on smaller devices */
+div.container {
+    width: 95%;
+    margin: auto;
+    padding: 0;
+}
