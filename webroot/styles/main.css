@@ -7,36 +7,85 @@ a {
 }
 
 #footer {
-    text-align: right;
-    font-size: 10px;
-    color: grey;
-    margin-top: 50px;
+    background-color: #1676b3;
+    width: 100%;
+    margin: 50px 0 0 0;
+    color: white;
+    padding-top: 2em;
+}
+
+#footer ul {
+    list-style: none;
+}
+
+#footer ul li img {
+    padding-right: 0.5em;
+    vertical-align: middle;
+}
+
+#footer a:hover {
+    color: #d3edfd;
+}
+
+#footer p {
+    color: inherit;
 }
 
 #header {
     margin-top: 3%;
 }
 
-#content {
-    margin-top: 4%;
-}
-
 .inverted {
     filter: invert(100%);
 }
 
+#content {
+    margin-top: 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#content > * {
+    flex: 1 50%;
+}
+
+@media screen and (max-width: 1510px) {
+    #content > * {
+        flex: 1 100%;
+    }
+}
+
 /* Make it so columns inside the nine columns div have width relative to it */
-#main-links {
+.main-links {
     position: relative;
+    width: 95%;
+    max-width: 750px;
+    margin: 0 auto 1.5em auto;
+
+}
+
+.main-links h4 {
+    margin-bottom: 1.5rem;
+}
+
+#right-pane .main-links:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 750px) {
+    .main-links {
+        width: 85%;
+    }
 }
 
 /* Put the headings a bit to the left of the links */
-#main-links h4 {
+.main-links h4 {
     margin-left: -2%;
 }
 
 /* Make sure overflow doesn't obfuscate other text */
-#main-links h5, #main-links p {
+.main-links h5, .main-links p {
     overflow: hidden;
 }
 
@@ -45,4 +94,8 @@ div.container {
     width: 95%;
     margin: auto;
     padding: 0;
+}
+
+div.comingsoon {
+    opacity: 0.60;
 }
