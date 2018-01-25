@@ -50,7 +50,7 @@ a {
     flex: 1 50%;
 }
 
-@media screen and (max-width: 1510px) {
+@media screen and (max-width: 1242px) {
     #content > * {
         flex: 1 100%;
     }
