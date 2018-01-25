@@ -7,6 +7,7 @@
     <link rel="icon" href="images/sm.png" type="images/x-icon">
     <title>Studentmedienes interne tjenester</title>
 
+    <script src="toggle-description.js"></script>
     <link rel="stylesheet" href="dependencies/Skeleton-2.0.4/css/normalize.css" />
     <link rel="stylesheet" href="dependencies/Skeleton-2.0.4/css/skeleton.css" />
     <link rel="stylesheet" href="styles/main.css" />
@@ -19,12 +20,16 @@
         <div id="header">
             <div class="row">
                 <div class="four columns"><img src="images/sm.png" /></div>
-                <div class="eight columns"><br><br>
+                <div class="eight columns">
                     <h2>Studentmediene i Trondheim</h2>
                     <h4>Oversikt over våre interne tjenester.</h4>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="description-form" class="container">
+        <label><input type="checkbox" onchange="toggleDescription(event)"/> Vis beskrivelser</label>
     </div>
 
     <div id="content">

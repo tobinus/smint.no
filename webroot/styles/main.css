@@ -79,6 +79,47 @@ a {
     }
 }
 
+#header h2 {
+    margin-top: 48px;
+}
+
+#description-form {
+    display: none;
+}
+
+/* Hide descriptions by default on smaller devices */
+@media screen and (max-width: 549px) {
+    #description-form {
+        display: block;
+    }
+    .main-links p {
+        display: none;
+    }
+    #header > div.row > div:first-child {
+        display: none;
+    }
+    #header h2 {
+        margin-top: 0;
+    }
+    /* Allow JS a way to force descriptions */
+    .force-descriptions .main-links p {
+        display: block;
+        margin-left: 1em;
+    }
+    .force-descriptions .main-links h5 {
+        margin-bottom: 0.5rem;
+    }
+    .main-links h5::before {
+        content: '• ';
+    }
+    .force-descriptions .main-links h5::before {
+        content: '';
+    }
+    .main-links h5 {
+        margin-bottom: 0.4rem;
+    }
+}
+
 /* Put the headings a bit to the left of the links */
 .main-links h4 {
     margin-left: -2%;
