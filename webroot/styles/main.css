@@ -137,6 +137,37 @@ div.container {
     padding: 0;
 }
 
-div.comingsoon {
+.comingsoon {
     opacity: 0.60;
+}
+
+.new {
+    animation: rainbow-color 3s infinite linear;
+}
+
+@keyframes rainbow-color {
+    from {
+        color: #0000AF;
+    }
+    14.29% {
+        color: #50007F;
+    }
+    28.57% {
+        color: #DF0000;
+    }
+    42.86% {
+        color: #FF8000;
+    }
+    57.14% {
+        color: #dad300;
+    }
+    71.43% {
+        color: #00c800;
+    }
+    85.71% {
+        color: #1676b3;
+    }
+    to {
+        color: #0000AF;
+    }
 }
