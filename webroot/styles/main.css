@@ -6,6 +6,11 @@ a {
     color: inherit;
 }
 
+/* Apply same color on focus as on :hover (from Skeleton) */
+a:focus {
+    color: #0FA0CE;
+}
+
 #footer {
     background-color: #1676b3;
     width: 100%;
@@ -23,7 +28,7 @@ a {
     vertical-align: middle;
 }
 
-#footer a:hover {
+#footer a:hover, #footer a:focus {
     color: #d3edfd;
 }
 
